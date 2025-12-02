@@ -1,0 +1,38 @@
+{
+  "name": "vibe-the-game",
+  "version": "0.1.0",
+  "description": "Parent-child game development project: Learn to build top-down adventure games together",
+  "type": "module",
+  "scripts": {
+    "dev:01": "vite prototypes/01-hello-world --open",
+    "dev:02": "vite prototypes/02-obstacles --open",
+    "dev:03": "vite prototypes/03-world-exploration --open",
+    "build:01": "vite build prototypes/01-hello-world",
+    "build:02": "vite build prototypes/02-obstacles",
+    "build:03": "vite build prototypes/03-world-exploration",
+    "preview:01": "vite preview prototypes/01-hello-world",
+    "preview:02": "vite preview prototypes/02-obstacles",
+    "preview:03": "vite preview prototypes/03-world-exploration"
+  },
+  "keywords": [
+    "game-development",
+    "phaser",
+    "phaser3",
+    "educational",
+    "learning",
+    "top-down",
+    "adventure-game"
+  ],
+  "author": "Bradley Fay & Son",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.87.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

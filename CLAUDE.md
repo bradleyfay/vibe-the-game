@@ -131,4 +131,174 @@ As the project grows:
 
 ---
 
+## Technical Decisions Made
+
+### Technology Stack
+
+**Decision**: Phaser 3 + JavaScript (NOT Python)
+
+**Date**: 2025-12-02
+
+**Rationale**:
+- **Fast feedback loops**: <1 second hot reload vs 3-10 seconds for PyScript
+  - Critical for keeping 8-year-old engaged
+  - Instant visual feedback reinforces learning
+- **Built for games**: Phaser is THE web game framework
+  - Arcade physics, tilemaps, animations out of the box
+  - Perfect for top-down adventure games
+- **Mature ecosystem**: 10+ years production-ready
+  - Tons of tutorials specifically for kids
+  - Large community for help
+- **JavaScript is learnable**: Parent can pick up basics in a weekend
+  - Syntax similar enough to Python
+  - Worth the learning curve for vastly better game dev experience
+
+**Trade-off Acknowledged**: Parent learns new language, but payoff justifies the cost.
+
+### Development Environment
+
+- **Runtime**: Web browser (Vite dev server)
+- **Dev Server**: Vite (instant hot reload, zero config)
+- **Package Manager**: npm
+- **Editor**: VS Code
+- **Testing**: Manual playtesting
+
+### Project Structure: Prototype-Centric
+
+**Decision**: Use prototype-centric structure instead of traditional src/
+
+**Structure**:
+```
+prototypes/
+  01-hello-world/      # Self-contained experiment
+  02-obstacles/        # Each builds on learnings
+  03-world-exploration/
+```
+
+**Why**:
+- Each prototype is self-contained experiment
+- Failed experiments are learning moments, not failures
+- Son can see progression: "Look how far from 01-hello-world!"
+- Easy to start fresh without fear of "breaking" things
+- Can always reference previous prototypes
+
+### Spec-Driven Development Workflow
+
+**Four Document Types**:
+
+1. **Game Vision** (`specs/GAME_VISION.md`)
+   - The big dream (3D like Fortnite!)
+   - Updated after playtests
+   - Keeps ultimate goal visible
+
+2. **Mechanics Library** (`specs/MECHANICS_LIBRARY.md`)
+   - Catalog of implemented mechanics
+   - Documents what works
+   - Teaches pattern recognition
+
+3. **Feature Specs** (per-prototype `spec.md`)
+   - Written BEFORE coding
+   - Clear success criteria
+   - Step-by-step implementation plan
+
+4. **Retrospectives** (per-prototype `README.md`)
+   - Written AFTER completion
+   - Captures learnings
+   - Celebrates progress
+
+**Session Flow**:
+Vision → Spec → Implement → Test → Update Library → Retrospective → Commit
+
+### Prototype Roadmap
+
+**01 - Hello World** (Session 1):
+- Character movement with keyboard
+- Learning: Coordinates, game loop, variables
+
+**02 - Obstacles** (Sessions 2-3):
+- Collision detection
+- Learning: Physics, collision
+
+**03 - World Exploration** (Sessions 4-6):
+- Tilemap world, camera following
+- Learning: Tilemaps, camera system
+
+**04 - Collectibles** (Sessions 7-8):
+- Items, score tracking
+- Learning: State management, UI
+
+**05 - Enemy** (Sessions 9-11):
+- Moving obstacle, game over
+- Learning: Game states, AI basics
+
+**06 - Abilities** (Sessions 12-15):
+- Attack/dash, animations
+- Learning: Abilities, timers
+
+### Path to 3D (Future)
+
+**Timeline**: Not before 6-12 months of 2D
+
+**Why Wait**:
+- 3D math significantly harder
+- Longer feedback loops (kills engagement)
+- Asset creation more complex
+- Master 2D deeply first
+
+**Progressive Path**:
+1. Add 3D backgrounds to 2D game
+2. Hybrid 2D gameplay in 3D world
+3. Full 3D with Three.js/Babylon.js
+
+### Commit Message Convention
+
+Always use conventional commits:
+
+```
+feat(proto01): implement character movement
+
+- Add WASD and arrow key controls
+- Implement boundary checking
+- Include MOVEMENT_SPEED experimentation variable
+
+This is the first working prototype! Son can now move a character
+around the screen and experiment with changing the speed.
+
+🤖 Generated with Claude Code (https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+**Format**: `type(scope): description`
+
+**Types**: feat, fix, docs, refactor, test, chore
+
+**Scopes**: proto01, proto02, docs, setup, config, etc.
+
+---
+
+## Key Files Reference
+
+### For Development
+
+- `package.json`: Dependencies and npm scripts
+- `vite.config.js`: Dev server configuration
+- `prototypes/[XX-name]/spec.md`: Feature specification (plan before code)
+- `prototypes/[XX-name]/README.md`: Retrospective (document after code)
+
+### For Planning
+
+- `specs/GAME_VISION.md`: Ultimate dream game
+- `specs/MECHANICS_LIBRARY.md`: Catalog of mechanics
+- `specs/templates/`: Reusable templates
+- `plan/`: Technical planning documents
+
+### For Learning
+
+- `docs/SETUP.md`: Detailed setup instructions
+- `docs/LEARNING_LOG.md`: Session-by-session journal
+- `docs/RESOURCES.md`: Curated tutorials and resources
+
+---
+
 **Remember**: The code quality matters less than the learning experience and sense of accomplishment. Build something that works, that's fun, and that teaches. Optimize for joy and understanding.
