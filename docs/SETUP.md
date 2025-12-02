@@ -82,7 +82,7 @@ npm run dev:01
 ```
 
 **What should happen**:
-1. Terminal shows "Local: http://localhost:3000/"
+1. Terminal shows "Local: `http://localhost:3000/`"
 2. Browser opens automatically
 3. You see the game page
 
@@ -201,7 +201,7 @@ npm install
 **Cause**: Vite can't detect default browser
 
 **Solution**:
-1. Note the URL in terminal (e.g., `http://localhost:3000`)
+1. Note the URL in terminal (usually `http://localhost:3000/`)
 2. Manually open browser and navigate to that URL
 3. Or remove `--open` from script in `package.json`
 

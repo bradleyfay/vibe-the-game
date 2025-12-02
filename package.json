@@ -4,15 +4,18 @@
   "description": "Parent-child game development project: Learn to build top-down adventure games together",
   "type": "module",
   "scripts": {
-    "dev:01": "vite prototypes/01-hello-world --open",
-    "dev:02": "vite prototypes/02-obstacles --open",
-    "dev:03": "vite prototypes/03-world-exploration --open",
-    "build:01": "vite build prototypes/01-hello-world",
-    "build:02": "vite build prototypes/02-obstacles",
-    "build:03": "vite build prototypes/03-world-exploration",
-    "preview:01": "vite preview prototypes/01-hello-world",
-    "preview:02": "vite preview prototypes/02-obstacles",
-    "preview:03": "vite preview prototypes/03-world-exploration"
+    "dev:01": "vite prototypes/01-hello-world --open --config vite.config.prototypes.js",
+    "dev:02": "vite prototypes/02-obstacles --open --config vite.config.prototypes.js",
+    "dev:03": "vite prototypes/03-world-exploration --open --config vite.config.prototypes.js",
+    "build:01": "vite build prototypes/01-hello-world --config vite.config.prototypes.js",
+    "build:02": "vite build prototypes/02-obstacles --config vite.config.prototypes.js",
+    "build:03": "vite build prototypes/03-world-exploration --config vite.config.prototypes.js",
+    "preview:01": "vite preview prototypes/01-hello-world --config vite.config.prototypes.js",
+    "preview:02": "vite preview prototypes/02-obstacles --config vite.config.prototypes.js",
+    "preview:03": "vite preview prototypes/03-world-exploration --config vite.config.prototypes.js",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "keywords": [
     "game-development",
@@ -29,7 +32,8 @@
     "phaser": "^3.87.0"
   },
   "devDependencies": {
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "vitepress": "^1.6.4"
   },
   "engines": {
     "node": ">=18.0.0",
