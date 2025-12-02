@@ -19,6 +19,11 @@ yarn-error.log*
 dist/
 build/
 
+# VitePress
+.vitepress/dist/
+.vitepress/cache/
+.vitepress/.temp/
+
 # IDE
 .vscode/
 .idea/
